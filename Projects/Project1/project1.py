@@ -176,8 +176,9 @@ def _actions(request: str, directories: "List of directories")-> None:
             return
         case "D":
             for files in directories:
-                dup_file = files.with_suffix(files.suffix + '.dup')
-                shutil.copy2(files, dup_file)
+                if files.suffix != ".dup"
+                    dup_file = files.with_suffix(files.suffix + '.dup')
+                    shutil.copy2(files, dup_file)
             return   
 
 def _run_program(test_directory, test_filter, test_action) -> None:
@@ -216,11 +217,11 @@ if __name__ == "__main__":
     for commands in input_commands:
         for inputs in filter_commands:
             for actions in action_commands:
-                if inputs == "A" or inputs == "T":
+                if inputs == "A":
                     _run_program((commands, p), (inputs), actions)
                 elif inputs == "> " or inputs == "< ":
                     _run_program((commands, p), (inputs, "10000"), actions)
-                elif inputs == "N":
+                elif inputs == "N" or inputs == "T":
                     _run_program((commands, p), (inputs,"problem2.py"), actions)
                 else:
                     _run_program((commands, p), (inputs,".py"), actions)
