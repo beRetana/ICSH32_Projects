@@ -197,8 +197,9 @@ def _run_program(test_directory, test_filter, test_action) -> None:
         
         directories = _second_search(test_filter, directories)
 
-        for directory in directories:
-            print(directory)
+        if len(directories) >= 1:
+            for directory in directories:
+                print(directory)
 
     if len(directories) >= 1:
         
