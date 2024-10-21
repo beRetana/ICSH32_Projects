@@ -35,7 +35,7 @@ def _take_input(options: list[str], path: bool) -> 'Tuple with required informat
                     if path:
                         if _check_path(user_input[2:]):
                             return (user_input[0], user_input[2:])
-                    elif user_input[:1] == "<" or user_input[:1] == ">":
+                    elif user_input[0] == "<" or user_input[0] == ">":
                         if _check_nums(user_input[2:]):
                             return (user_input[0], user_input[2:])
                     else:
@@ -176,27 +176,27 @@ def _actions(request: str, directories: "List of directories")-> None:
             return
         case "D":
             for files in directories:
-                if files.suffix != ".dup"
+                if files.suffix != ".dup":
                     dup_file = files.with_suffix(files.suffix + '.dup')
                     shutil.copy2(files, dup_file)
             return   
 
-def _run_program(test_directory, test_filter, test_action) -> None:
+def _run_program() -> None:
     'Runs functions in the right sequence'
 
     input_options = ["D ","R "]
 
-    #search_commands = _take_input(input_options, True)
+    search_commands = _take_input(input_options, True)
 
-    directories = _search_files(test_directory)
+    directories = _search_files(search_commands)
     
     if len(directories) >= 1:
         
         input_options = ["A","N ","E ","T","> ","< "]
         
-        #filter_command = _take_input(input_options, False)
+        filter_command = _take_input(input_options, False)
         
-        directories = _second_search(test_filter, directories)
+        directories = _second_search(filter_command, directories)
 
     if directories != None and len(directories) >= 1:
         for directory in directories:
@@ -204,28 +204,14 @@ def _run_program(test_directory, test_filter, test_action) -> None:
         
         input_options = ["D","T","F"]
             
-        #action_command = _take_input(input_options, False)
+        action_command = _take_input(input_options, False)
             
-        directories = _actions(test_action, directories)
+        directories = _actions(action_command, directories)
         
 
 if __name__ == "__main__":
-    p = "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work"
-    input_commands = ["D ","R "]
-    filter_commands = ["A","N ","E ","T","> ","< "]
-    action_commands = ["D","T","F"]
-    for commands in input_commands:
-        for inputs in filter_commands:
-            for actions in action_commands:
-                if inputs == "A":
-                    _run_program((commands, p), (inputs), actions)
-                elif inputs == "> " or inputs == "< ":
-                    _run_program((commands, p), (inputs, "10000"), actions)
-                elif inputs == "N" or inputs == "T":
-                    _run_program((commands, p), (inputs,"problem2.py"), actions)
-                else:
-                    _run_program((commands, p), (inputs,".py"), actions)
-                print(commands, inputs, actions)
+    _run_program()
+
     
 
 
