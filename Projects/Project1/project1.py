@@ -218,13 +218,13 @@ if __name__ == "__main__":
         for inputs in filter_commands:
             for actions in action_commands:
                 if inputs == "A" or inputs == "T":
-                    _run_program((elements, p), (inputs), actions)
+                    _run_program((commands, p), (inputs), actions)
                 elif inputs == "> " or inputs == "< ":
-                    _run_program((elements, p), (inputs, "10000"), actions)
+                    _run_program((commands, p), (inputs, "10000"), actions)
                 elif inputs == "N":
-                    _run_program((elements, p), (inputs,"problem2.py"), actions)
+                    _run_program((commands, p), (inputs,"problem2.py"), actions)
                 else:
-                    _run_program((elements, p), (inputs,".py"), actions)
+                    _run_program((commands, p), (inputs,".py"), actions)
     
 
 
