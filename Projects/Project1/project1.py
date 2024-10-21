@@ -197,16 +197,14 @@ def _run_program(test_directory, test_filter, test_action) -> None:
         
         directories = _second_search(test_filter, directories)
 
-        if len(directories) >= 1:
-            for directory in directories:
-                print(directory)
-
-    if len(directories) >= 1:
+    if directories != None and len(directories) >= 1:
+        for directory in directories:
+            print(directory)
         
         input_options = ["D","T","F"]
-        
+            
         #action_command = _take_input(input_options, False)
-        
+            
         directories = _actions(test_action, directories)
         
 
@@ -226,6 +224,7 @@ if __name__ == "__main__":
                     _run_program((commands, p), (inputs,"problem2.py"), actions)
                 else:
                     _run_program((commands, p), (inputs,".py"), actions)
+                print(commands, inputs, actions)
     
 
 
