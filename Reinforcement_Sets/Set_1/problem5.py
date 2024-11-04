@@ -1,5 +1,7 @@
 from pathlib import Path
 
+# lol
+
 def check_line(line: str) -> bool:
     'Checks if the line is valid to be counted'
     spaces = " "

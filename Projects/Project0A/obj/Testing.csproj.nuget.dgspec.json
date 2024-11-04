@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/Project0A/Testing.csproj": {}
+    "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work/Projects/Project0A/Testing.csproj": {}
   },
   "projects": {
-    "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/Project0A/Testing.csproj": {
+    "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work/Projects/Project0A/Testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/Project0A/Testing.csproj",
+        "projectUniqueName": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work/Projects/Project0A/Testing.csproj",
         "projectName": "Testing",
-        "projectPath": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/Project0A/Testing.csproj",
+        "projectPath": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work/Projects/Project0A/Testing.csproj",
         "packagesPath": "/Users/brandon__lii/.nuget/packages/",
-        "outputPath": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/Project0A/obj/",
+        "outputPath": "/Users/brandon__lii/Downloads/UCI/2024-2025/Fall/ICSH32/ICSH32_Work/Projects/Project0A/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/brandon__lii/.nuget/NuGet/NuGet.Config"
