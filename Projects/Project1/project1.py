@@ -1,6 +1,4 @@
 from pathlib import Path
-import os
-import stat
 import time
 import shutil
 
@@ -10,6 +8,16 @@ def _check_path(path: str) -> bool:
         path = Path(path)
         for elements in path.iterdir():
             pass
+    except:
+        return False
+    else:
+        return True
+
+def _path_exists(path: str) -> bool:
+    'Checks if the str is a valid path'
+    try:
+        path = Path(path)
+        path.exists()
     except:
         return False
     else:
@@ -33,8 +41,9 @@ def _take_input(options: list[str], path: bool) -> 'Tuple with required informat
             if len(user_input) > 2:
                 if user_input[:2] == option:
                     if path:
-                        if _check_path(user_input[2:]):
-                            return (user_input[0], user_input[2:])
+                        if(_path_exists(user_input[2:])):
+                            if _check_path(user_input[2:]):
+                                return (user_input[0], user_input[2:])
                     elif user_input[0] == "<" or user_input[0] == ">":
                         if _check_nums(user_input[2:]):
                             return (user_input[0], user_input[2:])
